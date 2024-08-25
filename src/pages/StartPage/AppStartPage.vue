@@ -1,10 +1,14 @@
 <template>
     <div class="start-page">
         <div class="start-page_content">
-            <img class="logo" src="../assets/logo.svg" alt="Logo">
-            <button class="btn-custom">
-               Start
-            </button>
+            <img class="logo" src="../../assets/logo.svg" alt="Logo">
+            <h1>TravelApp</h1>
+            <h3 class="mb-5 fst-italic">Where Dreams Meet Destinations</h3>
+            <RouterLink :to="{ name: 'intro-1' }">
+                <button class="btn-custom">
+                    Start
+                </button>
+            </RouterLink>
         </div>
     </div>
 </template>
@@ -16,12 +20,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/mixins.scss';
+@import '../../styles/mixins.scss';
 
 .start-page {
     @include background-base;
     @include flex-column-center;
 
+    color: white;
     height: 100vh;
 
     .start-page_content {
@@ -32,7 +37,7 @@ export default {
             min-width: 250px;
             max-width: 700px;
         }
-        
+
         .btn-custom {
             @include btn-custom;
             font-size: 32px;
