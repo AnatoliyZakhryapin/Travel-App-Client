@@ -11,8 +11,8 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        <h1>Make your own private travel plan</h1>
-                        <p class="mb-5">Formulate your strategy to receive wonderful gift packs</p>
+                        <h1>High-end leisure projects to choose from</h1>
+                        <p class="mb-5">The world's first-class modern leisure and entertainment method</p>
                     </div>
                 </div>
                 <div class="row">
