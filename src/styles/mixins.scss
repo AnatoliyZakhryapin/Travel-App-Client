@@ -1,0 +1,55 @@
+@import '../styles/variables.scss';
+
+@mixin background-base {
+    background: rgb(34,193,195);
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(74,153,253,1) 100%);
+}
+
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin btn-custom {
+    line-height: normal;
+    padding: 12px 38px;
+    border-radius: 99px;
+    border: 2px solid;
+    border-color: $blue;
+    background-color: $blue;
+    color: white;
+
+    &:hover {
+        animation: scale-10 1s infinite;
+        box-shadow: 0 0 24px white;
+    }
+}
+
+@mixin btn-custom-transparent {
+    line-height: normal;
+    padding: 12px 38px;
+    border-radius: 99px;
+    border: 2px solid;
+    border-color: white;
+    background-color: transparent;
+    color: white;
+
+    &:hover {
+        animation: scale-10 1s infinite;
+        box-shadow: 0 0 24px white;
+    }
+}
+
+@keyframes scale-10 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
