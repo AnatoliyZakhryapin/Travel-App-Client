@@ -28,6 +28,7 @@ export default {
 
     color: white;
     height: 100vh;
+    padding: 100px 0px;
 
     .start-page_content {
         @include flex-column-center;
@@ -39,8 +40,8 @@ export default {
         }
 
         .btn-custom {
-            @include btn-custom;
             font-size: 32px;
+            @include btn-custom;
         }
     }
 

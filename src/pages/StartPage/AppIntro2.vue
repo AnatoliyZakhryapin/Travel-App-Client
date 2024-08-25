@@ -42,6 +42,7 @@ export default {
     @include flex-column-center;
 
     height: 100vh;
+    padding: 100px 0px;
 
     .intro-page_content {
         @include flex-column-center;
@@ -51,15 +52,17 @@ export default {
         }
 
         .intro-image {
-            width: 60vw;
+            width: 40vw;
             min-width: 250px;
-            max-width: 700px;
+            max-width: 500px;
         }
 
         .btn-custom {
-            @include btn-custom;
-            @include btn-circle;
             font-size: 32px;
+            @include btn-custom;
+            & {
+                padding: 12px 12px;
+            }
         }
     }
 
