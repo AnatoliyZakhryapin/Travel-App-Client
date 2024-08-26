@@ -21,8 +21,12 @@ import {} from '@fortawesome/free-brands-svg-icons';
 library.add();
 
 import App from './App.vue';
+import { storeAuth } from '../src/store/storeAuth';
 
 const app = createApp(App);
+
+storeAuth.checkAuth();
+
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(createBootstrap());
 app.use(router);
