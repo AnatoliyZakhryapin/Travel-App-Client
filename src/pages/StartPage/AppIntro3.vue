@@ -17,9 +17,11 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button class="btn-custom">
-                            <img src="../../assets/arrow-right.svg" alt="Logo">
-                        </button>
+                        <RouterLink :to="{ name: 'register' }">
+                            <button class="btn-custom">
+                                <img src="../../assets/arrow-right.svg" alt="Logo">
+                            </button>
+                        </RouterLink>
                     </div>
                 </div>
             </div>
@@ -48,7 +50,7 @@ export default {
         p {
             color: $grey;
         }
-    
+
         .intro-image {
             width: 40vw;
             min-width: 250px;
@@ -58,6 +60,7 @@ export default {
         .btn-custom {
             font-size: 32px;
             @include btn-custom;
+
             & {
                 padding: 12px 12px;
             }
