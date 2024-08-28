@@ -9,7 +9,8 @@ import AppIntro3 from './pages/StartPage/AppIntro3.vue';
 import AppRegister from './pages/Auth/AppRegister.vue';
 import AppLogin from './pages/Auth/AppLogin.vue';
 import AppDashboard from './pages/Dashboard/AppDashboard.vue';
-import AppMyTrips from './pages/Dashboard/AppMyTrips.vue';
+import AppCreateTrips from './pages/Dashboard/AppCreateTrips.vue';
+import AppDestinations from './pages/Dashboard/AppDestinations.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -57,10 +58,18 @@ const router = createRouter({
                     meta: { requiresAuth: true }
                 },
                 {
-                    path: '/dashboard/mytrips',
-                    name: 'myTrips',
-                    component: AppMyTrips,
-                    meta: { requiresAuth: true }
+                    path: '/dashboard/createtrips',
+                    name: 'createTrips',
+                    component: AppCreateTrips,
+                    meta: { requiresAuth: true },
+                    children: [
+                        {
+                            path: '/dashboard/createtrips/destinations',
+                            name: 'destinations',
+                            component: AppDestinations,
+                            meta: { requiresAuth: true },
+                        }
+                    ]
                 },
             ]
         },
