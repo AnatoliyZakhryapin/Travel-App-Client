@@ -1,23 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import { storeAuth } from '../src/store/storeAuth';
-import AppHome from './pages/AppHome.vue';
+import AppHome from './pages/Dashboard/AppHome.vue';
 import AppStartPage from './pages/StartPage/AppStartPage.vue';
 import AppIntro1 from './pages/StartPage/AppIntro1.vue';
 import AppIntro2 from './pages/StartPage/AppIntro2.vue';
 import AppIntro3 from './pages/StartPage/AppIntro3.vue';
 import AppRegister from './pages/Auth/AppRegister.vue';
 import AppLogin from './pages/Auth/AppLogin.vue';
-import AppDashboard from './pages/AppDashboard.vue';
+import AppDashboard from './pages/Dashboard/AppDashboard.vue';
+import AppMyTrips from './pages/Dashboard/AppMyTrips.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {
-            path: '/home',
-            name: 'home',
-            component: AppHome,
-        },
         {
             path: '/',
             name: 'start',
@@ -52,7 +48,21 @@ const router = createRouter({
             path: '/dashboard',
             name: 'dashboard',
             component: AppDashboard,
-            meta: { requiresAuth: true }
+            meta: { requiresAuth: true },
+            children: [
+                {
+                    path: '/dashboard/home',
+                    name: 'home',
+                    component: AppHome,
+                    meta: { requiresAuth: true }
+                },
+                {
+                    path: '/dashboard/mytrips',
+                    name: 'myTrips',
+                    component: AppMyTrips,
+                    meta: { requiresAuth: true }
+                },
+            ]
         },
     ]
 });
