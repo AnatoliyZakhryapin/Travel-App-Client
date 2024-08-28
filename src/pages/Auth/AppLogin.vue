@@ -81,7 +81,7 @@ export default {
                         token: loginResponse.data.token
                     });
 
-                    this.$router.push({ name: 'dashboard' })
+                    this.$router.push({ name: 'home' })
                 }
 
             } catch (loginError) {
