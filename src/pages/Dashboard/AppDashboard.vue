@@ -1,5 +1,5 @@
 <template>
-    <div class="dashboard-page">
+    <div class="dashboard">
 
         <!-- Router view -->
         <router-view></router-view>
@@ -14,10 +14,10 @@
                         Home
                     </BNavItem>
                 </RouterLink>
-                <RouterLink :to="{ name: 'myTrips' }" v-slot="{ isActive }">
+                <RouterLink :to="{ name: 'createTrips' }" v-slot="{ isActive }">
                     <BNavItem :active="isActive">
                         <font-awesome-icon :icon="['fas', 'suitcase-rolling']" />
-                        Trip
+                        Create Trip
                     </BNavItem>
                 </RouterLink>
                 <BNavItem>
@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../styles/variables.scss';
 
-.dashboard-page {
+.dashboard {
     height: 100vh;
     background-color: $light-grey;
 
