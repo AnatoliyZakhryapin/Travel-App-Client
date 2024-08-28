@@ -1,7 +1,7 @@
 <template>
 
-    <main class="pt-3">
-        <div class="home-page d-flex flex-column gap-2">
+    <div class="home-page pt-3">
+        <main class="d-flex flex-column gap-2">
             <!-- Profile  -->
             <section class="Profile-card py-3">
                 <div class="container">
@@ -115,8 +115,8 @@
                     </div>
                 </div>
             </BOffcanvas>
-        </div>
-    </main>
+        </main>
+    </div>
 </template>
 
 <script>
@@ -223,10 +223,10 @@ export default {
     display: flex;
 }
 
-main {
+.home-page {
     padding-bottom: 100px;
 
-    .home-page {
+    main {
 
         .my-trips,
         .popular-trips {
