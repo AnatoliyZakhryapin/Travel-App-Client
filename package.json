@@ -17,6 +17,7 @@
     "axios": "^1.7.5",
     "bootstrap": "^5.3.3",
     "bootstrap-vue-next": "^0.24.10",
+    "swiper": "^11.1.10",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {
