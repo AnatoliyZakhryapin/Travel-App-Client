@@ -19,12 +19,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faHouse, faSuitcaseRolling, faHeart, faRightFromBracket, faStar, faStarHalfAlt, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faSuitcaseRolling, faHeart, faRightFromBracket, faStar, faStarHalfAlt, faArrowLeftLong, faArrowRightLong  } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 // import { fabGithub } from '@fortawesome/free-brands-svg-icons';
 
 /* add icons to the library */
-library.add( faHouse, faSuitcaseRolling, faHeart, faRightFromBracket, faStar, farStar, faStarHalfAlt, faArrowLeftLong );
+library.add( faHouse, faSuitcaseRolling, faHeart, faRightFromBracket, faStar, farStar, faStarHalfAlt, faArrowLeftLong, faArrowRightLong );
 
 import App from './App.vue';
 import { storeAuth } from '../src/store/storeAuth';
@@ -34,6 +34,5 @@ const app = createApp(App);
 storeAuth.checkAuth();
 
 app.component('font-awesome-icon', FontAwesomeIcon);
-app.use(createBootstrap());
 app.use(router);
 app.mount('#app');
