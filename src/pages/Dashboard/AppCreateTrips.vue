@@ -3,7 +3,7 @@
         <main class="d-flex flex-column gap-2">
 
             <!-- Profile  -->
-            <section class="Profile-card py-3">
+            <section class="Profile-card">
                 <div class="container">
                     <div class="row">
                         <div class="col">
