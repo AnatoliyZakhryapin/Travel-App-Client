@@ -5,7 +5,7 @@
             <!-- Go back btn -->
             <div class="row mb-3">
                 <div class="col">
-                    <button class="btn-custom-transparent">
+                    <button class="btn-custom-transparent" @click="$router.back()">
                         <font-awesome-icon :icon="['fas', 'arrow-left-long']" />
                     </button>
                 </div>
@@ -47,10 +47,12 @@
             <!-- Continue btn -->
             <div class="row mb-3 justify-content-end" v-if="store.travelForm.travelDestination != null">
                 <div class="col-auto">
-                    <button class="btn-custom">
-                        <span>Continue</span>
-                        <font-awesome-icon :icon="['fas', 'arrow-right-long']" />
-                    </button>
+                    <RouterLink :to="{ name: 'tripDetails'}">
+                        <button class="btn-custom">
+                            <span>Continue</span>
+                            <font-awesome-icon :icon="['fas', 'arrow-right-long']" />
+                        </button>
+                    </RouterLink>
                 </div>
             </div>
         </div>
@@ -61,6 +63,7 @@
 import { store } from '../../store/store';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Pagination } from 'swiper/modules';
+import { RouterLink } from 'vue-router';
 
 export default {
     data() {
@@ -116,7 +119,7 @@ export default {
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-.btn-custom{
+.btn-custom {
     font-size: 16px;
     @include btn-custom;
     align-items: center;
