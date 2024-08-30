@@ -119,54 +119,58 @@ export default {
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-.btn-custom {
-    font-size: 16px;
-    @include btn-custom;
-    align-items: center;
-    gap: 10px;
+.choice-destinations {
+    padding-bottom: 100px;
 
-    & {
-        padding: 10px 16px;
-    }
-}
+    .btn-custom {
+        font-size: 16px;
+        @include btn-custom;
+        align-items: center;
+        gap: 10px;
 
-.btn-custom-transparent {
-    font-size: 24px;
-    @include btn-custom-transparent;
-
-    & {
-        padding: 8px;
-        color: $blue;
-        border-color: $blue;
-    }
-}
-
-.mySwiper {
-    & .swiper-slide {
-        // width: 200px;
-        // height: 130px;
-        height: 40vh;
-        display: flex;
-
-        & img {
-            border-radius: 12px;
-            max-height: 100%;
-            width: 100%;
-            object-fit: cover;
+        & {
+            padding: 10px 16px;
         }
+    }
 
-        & .slide-content {
-            color: white;
-            font-size: 16px;
-            position: absolute;
-            bottom: 0%;
-            padding: 16px;
+    .btn-custom-transparent {
+        font-size: 24px;
+        @include btn-custom-transparent;
 
-            & .title {
-                padding: 6px 10px;
+        & {
+            padding: 8px;
+            color: $blue;
+            border-color: $blue;
+        }
+    }
+
+    .mySwiper {
+        & .swiper-slide {
+            // width: 200px;
+            // height: 130px;
+            height: 40vh;
+            display: flex;
+
+            & img {
                 border-radius: 12px;
-                background-color: #ffffff0d;
-                backdrop-filter: blur(5px);
+                max-height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            & .slide-content {
+                color: white;
+                font-size: 16px;
+                position: absolute;
+                bottom: 0%;
+                padding: 16px;
+
+                & .title {
+                    padding: 6px 10px;
+                    border-radius: 12px;
+                    background-color: #ffffff0d;
+                    backdrop-filter: blur(5px);
+                }
             }
         }
     }
