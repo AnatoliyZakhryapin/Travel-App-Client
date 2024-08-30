@@ -104,7 +104,7 @@
                     <p>{{ selectedSlide.description }}</p>
                     <AppRateCard :item="selectedSlide" class="mb-4" />
                     <div class="d-flex justify-content-between gap-3">
-                        <RouterLink :to="{ name: 'myTrips' }">
+                        <RouterLink :to="{ name: 'createTrips' }">
                             <button class="btn-custom-transparent">
                                 Start your Trip
                             </button>
