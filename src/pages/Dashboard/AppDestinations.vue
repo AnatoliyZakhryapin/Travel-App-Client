@@ -26,17 +26,17 @@
             </div>
 
             <!-- Destination foto slider -->
-            <div class="row mb-3" v-if="store.travelForm.travelDestination != null">
+            <div class="row mb-3" v-if="store.tripForm.PlaceModel != null">
                 <div class="col slider">
                     <!-- <button @click="showDestination()">click</button> -->
                     <swiper :loop="true" :pagination="{
                         dynamicBullets: true,
                     }" :modules="modules" class="mySwiper">
-                        <swiper-slide v-for="(slide, index) in store.travelForm.travelDestination.photos" :key="index">
+                        <swiper-slide v-for="(slide, index) in store.tripForm.PlaceModel.photos" :key="index">
                             <div class="d-flex w-100">
-                                <img :src="slide.getUrl()" alt="Slide Image">
+                                <img :src="slide.photoUrl" alt="Slide Image">
                                 <div class="slide-content">
-                                    <h5 class="title">{{ store.travelForm.travelDestination.name }}</h5>
+                                    <h5 class="title">{{ store.tripForm.PlaceModel.name }}</h5>
                                 </div>
                             </div>
                         </swiper-slide>
@@ -45,7 +45,7 @@
             </div>
 
             <!-- Continue btn -->
-            <div class="row mb-3 justify-content-end" v-if="store.travelForm.travelDestination != null">
+            <div class="row mb-3 justify-content-end" v-if="store.tripForm.PlaceModel != null">
                 <div class="col-auto">
                     <RouterLink :to="{ name: 'tripDetails'}">
                         <button class="btn-custom">
@@ -97,7 +97,7 @@ export default {
             const input = document.getElementById('searchDestination');
             const options = {
                 types: ['(regions)'],
-                fields: ['address_components', 'geometry', 'name', 'photos', 'place_id', 'formatted_address']
+                fields: ['name', 'formatted_address', 'icon', 'place_id', 'geometry', 'photos']
             };
 
             const autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -108,7 +108,28 @@ export default {
 
                 input.value = place.formatted_address;
 
-                this.store.travelForm.travelDestination = place;
+                // this.store.tripForm.PlaceModel = place;
+                this.store.tripForm.PlaceModel.name = place.name;
+                this.store.tripForm.PlaceModel.formattedAddress = place.formatted_address;
+                this.store.tripForm.PlaceModel.icon = place.icon;
+                this.store.tripForm.PlaceModel.placeIdGoogle = place.place_id;
+                this.store.tripForm.PlaceModel.location = place.geometry.location;
+                console.log( place.geometry.viewport)
+                this.store.tripForm.PlaceModel.viewport.northeast.lat = place.geometry.viewport.ci.hi;  
+                this.store.tripForm.PlaceModel.viewport.northeast.lng = place.geometry.viewport.Hh.hi;
+                this.store.tripForm.PlaceModel.viewport.southwest.lat = place.geometry.viewport.ci.lo;
+                this.store.tripForm.PlaceModel.viewport.southwest.lng = place.geometry.viewport.Hh.lo;
+
+                if (place.photos && place.photos.length > 0) {
+                    
+                    this.store.tripForm.PlaceModel.photos = place.photos.map(photo => {
+                        return {
+                            photoUrl: photo.getUrl(),
+                            htmlAttributions: photo.html_attributions.join(', '),
+                            isUserUploaded: false
+                        };
+                    });
+                } 
             });
         },
     },
