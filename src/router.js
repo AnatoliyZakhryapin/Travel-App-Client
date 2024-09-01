@@ -11,6 +11,7 @@ import AppLogin from './pages/Auth/AppLogin.vue';
 import AppDashboard from './pages/Dashboard/AppDashboard.vue';
 import AppCreateTrips from './pages/Dashboard/AppCreateTrips.vue';
 import AppDestinations from './pages/Dashboard/AppDestinations.vue';
+import AppTripsDetails from './pages/Dashboard/AppTripsDetails.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -67,6 +68,12 @@ const router = createRouter({
                             path: '/dashboard/createtrips/destinations',
                             name: 'destinations',
                             component: AppDestinations,
+                            meta: { requiresAuth: true },
+                        },
+                        {
+                            path: '/dashboard/createtrips/trip-details',
+                            name: 'tripDetails',
+                            component: AppTripsDetails,
                             meta: { requiresAuth: true },
                         }
                     ]
